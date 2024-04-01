@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProductView" customModule="s567075ShopcyApp" customModuleProvider="target">
+            <connections>
+                <outlet property="descriptionLBL" destination="XpL-dA-epY" id="GBC-97-D8k"/>
+                <outlet property="discountAndActualPriceLBL" destination="GAo-DC-3TC" id="WnV-cW-V3P"/>
+                <outlet property="productIMG" destination="7Xj-9Z-NwY" id="dul-mh-H2U"/>
+                <outlet property="ratingLBL" destination="6Hz-TN-LEc" id="3FJ-jw-Vi3"/>
+                <outlet property="titleLBL" destination="tMp-AW-cpK" id="r7S-IH-MEn"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" userLabel="ProductView">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="xKl-E4-Et6" userLabel="BigContainerSV">
+                    <rect key="frame" x="5" y="59" width="383" height="759"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iphone.gen1" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="7Xj-9Z-NwY">
+                            <rect key="frame" x="0.0" y="0.66666666666665719" width="383" height="375"/>
+                        </imageView>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="YTn-dQ-VSv" userLabel="ProductDetailSV">
+                            <rect key="frame" x="0.0" y="383.66666666666674" width="383" height="375.33333333333326"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tMp-AW-cpK">
+                                    <rect key="frame" x="0.0" y="0.0" width="383" height="75"/>
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XpL-dA-epY">
+                                    <rect key="frame" x="0.0" y="74.999999999999943" width="383" height="150"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating/5.0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Hz-TN-LEc">
+                                    <rect key="frame" x="0.0" y="224.99999999999997" width="383" height="75.333333333333343"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DiscountPrice/ActualPrice" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GAo-DC-3TC">
+                                    <rect key="frame" x="0.0" y="300.33333333333331" width="383" height="75"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="tMp-AW-cpK" firstAttribute="height" secondItem="YTn-dQ-VSv" secondAttribute="height" multiplier="0.2" id="5Uf-dR-2Kc"/>
+                                <constraint firstItem="GAo-DC-3TC" firstAttribute="height" secondItem="YTn-dQ-VSv" secondAttribute="height" multiplier="0.2" id="gsh-Id-5gt"/>
+                                <constraint firstItem="XpL-dA-epY" firstAttribute="height" secondItem="YTn-dQ-VSv" secondAttribute="height" multiplier="0.4" id="oac-sb-jn0"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="xKl-E4-Et6" secondAttribute="bottom" id="0Qb-Xm-izR"/>
+                <constraint firstItem="xKl-E4-Et6" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="5" id="Bc7-m8-VlK"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="xKl-E4-Et6" secondAttribute="trailing" constant="5" id="c7u-KR-cxZ"/>
+                <constraint firstItem="xKl-E4-Et6" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="pKH-E3-UAi"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-115" y="20"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="iphone.gen1" catalog="system" width="112" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

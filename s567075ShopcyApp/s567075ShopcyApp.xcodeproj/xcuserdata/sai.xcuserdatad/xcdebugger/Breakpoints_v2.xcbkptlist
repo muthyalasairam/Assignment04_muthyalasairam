@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "4881C776-BDB1-4390-914F-2DE354BBCB8E"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "01B675CB-70A9-4EA0-A4A4-7E1215DC64B5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "s567075ShopcyApp/ProductsVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "fetchProductsAndUpdateViews()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "01B675CB-70A9-4EA0-A4A4-7E1215DC64B5 - 4382b227b8d840da"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) suspend resume partial function for s567075ShopcyApp.ProductsVC.fetchProductsAndUpdateViews() async -&gt; ()"
+                  moduleName = "s567075ShopcyApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sai/Documents/IOS-Sairam/assignment04-muthyalasairam/s567075ShopcyApp/s567075ShopcyApp/ProductsVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "152">
+               </Location>
+               <Location
+                  uuid = "01B675CB-70A9-4EA0-A4A4-7E1215DC64B5 - 4382b227b8d840da"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) suspend resume partial function for s567075ShopcyApp.ProductsVC.fetchProductsAndUpdateViews() async -&gt; ()"
+                  moduleName = "s567075ShopcyApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sai/Documents/IOS-Sairam/assignment04-muthyalasairam/s567075ShopcyApp/s567075ShopcyApp/ProductsVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "144">
+               </Location>
+               <Location
+                  uuid = "01B675CB-70A9-4EA0-A4A4-7E1215DC64B5 - 4382b227b8d840b9"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) suspend resume partial function for s567075ShopcyApp.ProductsVC.fetchProductsAndUpdateViews() async -&gt; ()"
+                  moduleName = "s567075ShopcyApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sai/Documents/IOS-Sairam/assignment04-muthyalasairam/s567075ShopcyApp/s567075ShopcyApp/ProductsVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "524">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
