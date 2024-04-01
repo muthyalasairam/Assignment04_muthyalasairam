@@ -9,13 +9,25 @@ import UIKit
 
 class CartTableVC: UIViewController {
 
+    @IBOutlet weak var productsTV: UITableView!
+    
+    @IBOutlet weak var messageLBL: UILabel!
+    
+    @IBOutlet weak var priceLBL: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func buyCart(_ sender: UIButton) {
+    }
+    
+    
+    @IBAction func clearCart(_ sender: UIButton) {
+    }
+    
     /*
     // MARK: - Navigation
 

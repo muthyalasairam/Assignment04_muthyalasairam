@@ -7,14 +7,11 @@
 
 import UIKit
 
-class ProductDetailVC: UIViewController, UIContextMenuInteractionDelegate {
+class ProductDetailVC: UIViewController, UIEditMenuInteractionDelegate {
     var selectedProduct: Product?
     var selectedProductKey: String?
     let memoryOptions = ["2TB", "1TB", "512GB", "256GB", "128GB"]
     let colorOptions = ["Blue🟦", "Green🟩", "Red🟥", "Black⬛️", "White⬜️"]
-    var selectedMemory: String = ""
-    var selectedColor: String = ""
-
     
     @IBOutlet weak var ratingLBL: UILabel!
     
@@ -74,46 +71,45 @@ class ProductDetailVC: UIViewController, UIContextMenuInteractionDelegate {
         imgIV.addGestureRecognizer(swipeRight)
         
         imgIV.isUserInteractionEnabled = true
-       
-        
-        memorySize.addInteraction(UIContextMenuInteraction(delegate: self))
-        itemColors.addInteraction(UIContextMenuInteraction(delegate: self))
-        
-    }
-    func contextMenuInteraction(_ interaction: UIContextMenuInteraction, configurationForMenuAtLocation location: CGPoint) -> UIContextMenuConfiguration? {
-           let button = interaction.view as! UIButton
-           
-           if button == memorySize {
-               return createContextMenu(title: "Memory", options: memoryOptions, defaultOption: memoryOptions.first)
-           } else if button == itemColors {
-               return createContextMenu(title: "Color", options: colorOptions, defaultOption: colorOptions.first)
+
+        // Set default memory size
+               memorySize.setTitle(memoryOptions.first, for: .normal)
+
+               // Add edit menu interaction to memorySize button
+               let editMenuInteraction = UIEditMenuInteraction(delegate: self)
+               memorySize.addInteraction(editMenuInteraction)
            }
-           
-           return nil
-       }
 
-       // MARK: - Helper Methods
-
-       func createContextMenu(title: String, options: [String], defaultOption: String?) -> UIContextMenuConfiguration {
-           let menuActions = options.map { option in
-               let state: UIMenuElement.State = option == defaultOption ? .on : .off
-               return UIAction(title: option, state: state) { [weak self] _ in
-                   if title == "Memory" {
-                       self?.selectedMemory = option
-                       self?.memorySize.setTitle(option, for: .normal)
-                   } else if title == "Color" {
-                       self?.selectedColor = option
-                       self?.itemColors.setTitle(option, for: .normal)
-                   }
+           // Handle edit menu interaction
+           override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
+               if action == #selector(showMemorySizeOptions) {
+                   return true
                }
+               return super.canPerformAction(action, withSender: sender)
            }
 
-           return UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { _ in
-               UIMenu(title: title, children: menuActions)
-           }
-       }
+           @objc func showMemorySizeOptions() {
+               // Create UIMenu
+               let menu = UIMenu(title: "Select Memory Size", children: memorySizeOptions())
 
-    
+               // Show UIMenu
+               let menuController = UIMenuController.shared
+               menuController.showMenu(from: view, rect: memorySize.frame)
+           }
+
+           // Define memory size options
+           private func memorySizeOptions() -> [UIMenuElement] {
+               var menuItems: [UIMenuElement] = []
+               for size in memoryOptions {
+                   let action = UIAction(title: size, handler: { [weak self] _ in
+                       self?.memorySize.setTitle(size, for: .normal)
+                       // Handle selection here, e.g., update selected product
+                   })
+                   menuItems.append(action)
+               }
+               return menuItems
+           }
+ 
     @objc func handleSwipe(_ gesture: UISwipeGestureRecognizer) {
         guard let img = selectedProduct?.images else {
             return
@@ -136,6 +132,9 @@ class ProductDetailVC: UIViewController, UIContextMenuInteractionDelegate {
         if let imageURL = URL(string: img[pageControl]) {
             imgIV.sd_setImage(with: imageURL, placeholderImage: UIImage(named: "placeholder"))
         }
+        
     }
+  
+    
     
 }
